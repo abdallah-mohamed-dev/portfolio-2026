@@ -3,121 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vanguard Wealth | Case Study</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Nexus.Core // NEON VOID</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- GSAP & Plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <style>
+        .project-hero {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 5vw;
+            margin: 10rem 0;
+        }
+        .spec-item {
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1rem;
+        }
+        .spec-label {
+            display: block;
+            color: var(--accent);
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+        .spec-value {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+        .gallery-image {
+            width: 100%;
+            margin-bottom: 5vw;
+            border: 1px solid var(--border);
+            filter: grayscale(1);
+            transition: filter 0.5s ease;
+        }
+        .gallery-image:hover {
+            filter: grayscale(0);
+        }
+    </style>
 </head>
-<body class="theme-dark detail-page">
+<body>
 
     <div class="noise"></div>
-    <div class="cursor" id="cursor"></div>
+    <div class="blob"></div>
+    
+    <div class="custom-cursor"></div>
+    <div class="cursor-trail"></div>
 
-    <header class="site-header">
-        <div class="header-inner container">
-            <a href="index.html" class="back-link">← Back to Index</a>
-            <div class="nav-links">
-                <span class="nav-item">Project 01/05</span>
-            </div>
+    <header class="header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">NEON VOID</a>
+            <nav class="nav">
+                <a href="index.html#work" class="nav-item" data-text="Back"><span>Back</span></a>
+            </nav>
         </div>
     </header>
 
-    <main>
-        <!-- Project Hero -->
+    <main class="container">
         <section class="project-hero">
-            <div class="container">
-                <div class="hero-meta">
-                    <span class="tag">FinTech Architecture</span>
-                    <h1 class="project-title-large">Vanguard <br> Wealth.</h1>
-                </div>
-                <div class="project-cover">
-                    <div class="placeholder-bg" style="background: #121212; height: 80vh;"></div>
-                </div>
-            </div>
+            <span class="project-category" style="font-size: 1.2rem;">Phase 01 // Nexus.Core</span>
+            <h1 class="hero-title" style="font-size: clamp(3rem, 10vw, 8rem);">NEURAL<br>FINANCE.</h1>
         </section>
 
-        <!-- Project Brief -->
-        <section class="project-brief container">
-            <div class="brief-grid">
-                <div class="brief-col">
-                    <h2 class="label">The Challenge</h2>
-                    <p class="text-large">Vanguard required a digital portal that could handle complex financial data visualizations while maintaining the ultra-premium feel of a private bank. The primary obstacle was integrating legacy API data into a modern, fast, and SEO-friendly WordPress environment.</p>
-                </div>
-                <div class="brief-col specs">
-                    <div class="spec-item">
-                        <span class="label">Year</span>
-                        <span class="val">2026</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="label">Role</span>
-                        <span class="val">Lead Frontend Architect</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="label">Stack</span>
-                        <span class="val">Headless WP, Next.js, Framer Motion</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <img src="public/images/projects/nexus-hero.svg" alt="Nexus" class="gallery-image">
 
-        <!-- Project Images / Grid -->
-        <section class="project-gallery container">
-            <div class="gallery-grid">
-                <div class="gallery-item full">
-                    <div class="placeholder-bg" style="background: #1a1a1a; aspect-ratio: 16/9;"></div>
-                    <p class="caption">01 // Dashboard architecture showing real-time asset tracking.</p>
-                </div>
-                <div class="gallery-item">
-                    <div class="placeholder-bg" style="background: #0f0f0f; aspect-ratio: 1/1;"></div>
-                </div>
-                <div class="gallery-item">
-                    <div class="placeholder-bg" style="background: #222; aspect-ratio: 1/1;"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Execution & Result -->
-        <section class="project-execution section-spacing container">
-            <div class="section-header">
-                <span class="index">02</span>
-                <h2 class="section-title">The Strategy</h2>
-            </div>
-            <div class="text-content">
-                <h3 class="h-medium">We built a custom GraphQL layer to bridge the legacy banking system with WordPress.</h3>
-                <p>By decoupling the frontend from the backend, we achieved a perfect 100/100 Lighthouse score. The interface was designed using a "Glass-Brutalism" approach—combining sharp borders with soft, blurred translucent surfaces to represent transparency and security.</p>
+        <div class="detail-grid">
+            <div class="detail-content">
+                <h2 class="section-title" style="font-size: 3rem;">Protocol</h2>
+                <p style="font-size: 1.8rem; line-height: 1.2; margin-bottom: 2rem; opacity: 0.8;">Re-engineering the foundation of private equity management through a high-fidelity neural interface.</p>
+                <p style="font-size: 1.1rem; opacity: 0.6; line-height: 1.6;">Nexus.Core is not just a dashboard; it's a sensory extension of financial data. By utilizing headless architectures and real-time data streams, we've created a portal that reacts to the pulse of the market with sub-millisecond precision.</p>
             </div>
             
-            <div class="metrics-grid">
-                <div class="metric-card">
-                    <span class="m-val">+42%</span>
-                    <span class="m-label">Load Speed Improvement</span>
+            <div class="detail-sidebar">
+                <div class="spec-item">
+                    <span class="spec-label">Codename</span>
+                    <span class="spec-value">Nexus.Core</span>
                 </div>
-                <div class="metric-card">
-                    <span class="m-val">12k+</span>
-                    <span class="m-label">Active Users Managed</span>
+                <div class="spec-item">
+                    <span class="spec-label">Tech Stack</span>
+                    <span class="spec-value">GSAP / NEXT.JS / GLSL</span>
                 </div>
-            </div>
-        </section>
-
-        <!-- Next Project Call -->
-        <section class="next-project">
-            <a href="#" class="next-link">
-                <span class="label">Next Project</span>
-                <h4 class="next-title">Lumina Atelier →</h4>
-            </a>
-        </section>
-    </main>
-
-    <footer class="site-footer container">
-        <div class="footer-bottom">
-            <p>© 2026 ARCHITECTURAL FRONTEND.</p>
-            <div class="footer-links">
-                <a href="index.html">Index</a>
-                <a href="#top">Top ↑</a>
+                <div class="spec-item">
+                    <span class="spec-label">Year</span>
+                    <span class="spec-value">2026.02</span>
+                </div>
             </div>
         </div>
-    </footer>
+
+        <img src="public/images/projects/nexus-mockup.svg" alt="Mockup" class="gallery-image">
+
+        <section style="padding: 10rem 0; text-align: center;">
+            <a href="index.html" class="btn-glitch" style="text-decoration: none;">RETURN TO SYSTEM</a>
+        </section>
+    </main>
 
     <script src="assets/js/app.js"></script>
 </body>
