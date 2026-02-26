@@ -232,6 +232,9 @@ body {
 
 .project-item {
     position: relative;
+    display: block;
+    text-decoration: none;
+    color: inherit;
 }
 
 .project-image-wrap {
